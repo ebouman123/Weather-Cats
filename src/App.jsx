@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./styles/App.css";
 import Search from "./components/Search";
+import CurrentTemp from "./components/todayMain/CurrentTemp";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,6 +31,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <Search />
+      <CurrentTemp />
     </>
   );
 }

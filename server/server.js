@@ -8,6 +8,7 @@ app.use(cors());
 
 // Route Includes
 const locationRouter = require("./routes/location.router");
+const currentWeatherRouter = require("./routes/currentWeather.router");
 
 // Express Middleware
 app.use(express.json());
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use("/api/location", locationRouter);
+app.use("/api/currentWeather", currentWeatherRouter);
 
 // Listen Server & Port
 app.listen(PORT, () => {

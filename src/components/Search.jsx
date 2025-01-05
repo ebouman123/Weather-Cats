@@ -1,13 +1,30 @@
 import { fetchLocation } from "../routes/fetchLocation";
+import { fetchCurrentWeather } from "../routes/fetchCurrentWeather";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 export default function Search() {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
 
-  const handleSearch = (e) => {
+  const dispatch = useDispatch();
+
+  const handleSearch = async (e) => {
     e.preventDefault();
-    fetchLocation(city, state);
+    try {
+      const locationResponse = await fetchLocation(city, state);
+      const currentWeatherResponse = await fetchCurrentWeather(
+        locationResponse.lat,
+        locationResponse.lon
+      );
+      dispatch({ type: "SET_LOCATION", payload: locationResponse });
+      dispatch({
+        type: "SET_CURRENT_WEATHER",
+        payload: currentWeatherResponse,
+      });
+    } catch (error) {
+      console.error("Error with handleSearch ->", error);
+    }
   };
 
   return (
