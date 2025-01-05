@@ -2,16 +2,19 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const PORT = process.env.PORT || 5001;
+const cors = require("cors");
+
+app.use(cors());
 
 // Route Includes
-const exampleRouter = require("./routes/example.router");
+const locationRouter = require("./routes/location.router");
 
 // Express Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use("/api/example", exampleRouter);
+app.use("/api/location", locationRouter);
 
 // Listen Server & Port
 app.listen(PORT, () => {
