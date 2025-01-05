@@ -1,7 +1,11 @@
 import { useSelector } from "react-redux";
 
 export default function CurrentTemp() {
-  const currentWeather = useSelector((state) => state.currentWeather);
+    const currentWeather = useSelector((state) => state.currentWeather);
 
-  return <div>Current Weather: {JSON.stringify(currentWeather)}</div>;
+    if (!currentWeather?.main?.temp) {
+        return <div></div>;
+    }
+
+    return <div>Current Temp: {currentWeather.main.temp}°F</div>;
 }

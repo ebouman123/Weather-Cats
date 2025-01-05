@@ -23,6 +23,7 @@ export default function Search() {
         payload: currentWeatherResponse,
       });
     } catch (error) {
+      alert("Are you sure that's what you meant to type?");
       console.error("Error with handleSearch ->", error);
     }
   };
