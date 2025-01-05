@@ -30,12 +30,17 @@ export default function Search() {
 
   return (
     <form>
+      <label htmlFor="city">City: </label>
       <input
+        name="city"
         value={city}
         onChange={(e) => setCity(e.target.value)}
         placeholder="City"
       ></input>
+      <label htmlFor="state">State: </label>
+
       <input
+        name="state"
         value={state}
         onChange={(e) => setState(e.target.value)}
         placeholder="State"

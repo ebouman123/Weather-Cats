@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+body {
+  background-image: url('../assets/CoolCat.jpeg');
+  background-size: cover;   /* Ensures the image covers the entire background */
+  background-position: center;  /* Centers the background image */
+  background-repeat: no-repeat;  /* Prevents repeating the image */
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -35,6 +42,8 @@
 
 .card {
   padding: 2em;
+  background-color: white;
+  border-radius: 50px;
 }
 
 .read-the-docs {

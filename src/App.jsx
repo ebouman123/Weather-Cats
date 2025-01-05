@@ -4,11 +4,11 @@ import TodayMain from "./components/todayMain/TodayMain";
 
 function App() {
   return (
-    <>
+    <div className="card">
       <h1>☀️🐈‍⬛ Meow 🐈‍⬛🌧️</h1>
       <Search />
       <TodayMain />
-    </>
+    </div>
   );
 }
 
